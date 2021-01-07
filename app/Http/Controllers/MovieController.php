@@ -11,23 +11,23 @@ class MovieController extends Controller
     {
         return Movie::all();
     }
-    public function show(Movie $gender)
+    public function show(Movie $movie)
     {
-        return $gender;
+        return $movie;
     }
     public function store(Request $request)
     {
-        $gender = Movie::create($request->all());
-        return response()->json($gender, 201);
+        $movie = Movie::create($request->all());
+        return response()->json($movie, 201);
     }
-    public function update(Request $request, Movie $gender)
+    public function update(Request $request, Movie $movie)
     {
-        $gender->update($request->all());
-        return response()->json($gender, 200);
+        $movie->update($request->all());
+        return response()->json($movie, 200);
     }
-    public function delete(Movie $gender)
+    public function delete(Movie $movie)
     {
-        $gender->delete();
+        $movie->delete();
         return response()->json(null, 204);
     }
 }
