@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Genre;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -25,9 +26,9 @@ class UserTableSeeder extends Seeder
         ]);
         // Generar algunos usuarios para nuestra aplicacion for ($i = 0; $i < 10; $i++) {
         User::create([
-            'name' => $faker->name,
+            'name' => $faker->name(),
             'lastName' => $faker->lastName,
-            'document' => $faker->paragraph(1),
+            'document' => $faker->name(),
             'email' => $faker->email,
             'password' => $password,
         ]);

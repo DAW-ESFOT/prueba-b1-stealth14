@@ -9,14 +9,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        return User::all();
-    }
-    public function show(User $user)
-    {
-        return $user;
-    }
+
     public function store(Request $request)
     {
         $user = User::create($request->all());
@@ -32,4 +25,19 @@ class UserController extends Controller
         $user->delete();
         return response()->json(null, 204);
     }
+
+    public function index()
+    {
+        return User::all();
+    }
+    public function show(User $user)
+    {
+        return $user;
+    }
+    
+    public function favorites(User $user)
+    {   
+        return $user->tags::all();
+    }
+
 }

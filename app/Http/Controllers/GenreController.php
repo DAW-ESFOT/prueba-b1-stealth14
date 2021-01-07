@@ -32,4 +32,9 @@ class GenreController extends Controller
         $genre->delete();
         return response()->json(null, 204);
     }
+    public function movies(Genre $genre)
+    {
+        return $genre->movies;
+    }
+
 }

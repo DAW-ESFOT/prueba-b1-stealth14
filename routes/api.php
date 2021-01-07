@@ -29,9 +29,11 @@ Route::get('genres/{genre}', 'App\Http\Controllers\GenreController@show');
 Route::post('genres', 'App\Http\Controllers\GenreController@store');
 Route::put('genres/{genre}', 'App\Http\Controllers\GenreController@update');
 Route::delete('genres/{genre}', 'App\Http\Controllers\GenreController@delete');
+Route::get('genres/{genre}/movies', 'UserController@movies');
 
 Route::get('users', 'App\Http\Controllers\UserController@index');
 Route::get('users/{user}', 'App\Http\Controllers\UserController@show');
 Route::post('users', 'App\Http\Controllers\UserController@store');
 Route::put('users/{user}', 'App\Http\Controllers\UserController@update');
 Route::delete('users/{user}', 'App\Http\Controllers\UserController@delete');
+Route::get('users/{user}/favorites', 'UserController@favorites');
